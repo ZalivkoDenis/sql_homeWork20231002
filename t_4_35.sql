@@ -7,3 +7,20 @@ a > b). В каком случае на столе можно разместит
 свисать со стола.
  */
 
+use hw_temp_mysql;
+
+drop function if exists t_4_35;
+
+delimiter $$
+create function t_4_35()
+    returns BOOL
+    deterministic
+begin
+
+    return TRUE;
+end $$
+
+
+delimiter ;
+
+select t_4_35() as result;
