@@ -16,5 +16,14 @@ create table debug(
     dt_log datetime default CURRENT_TIMESTAMP()
 );
 
+drop procedure if exists debug_prc;
+
+delimiter $$
+create procedure debug_prc(in name varchar(32), in log varchar(128))
+begin
+    insert into debug(name, log) values (name, log);
+end $$
+delimiter ;
+
 -- END DEBUG --
 

@@ -25,8 +25,7 @@ begin
 
     cycle: while n > 0 do
         -- DEBUG --
-        insert into debug (name, log)
-        values (dbg_n,  concat('Number before processing: ', n));
+        call debug_prc(dbg_n,  concat('Number before processing: ', n));
         -- END DEBUG --
 
         set prev_cifer = cifer;
@@ -35,8 +34,7 @@ begin
         set result = result and (cifer = prev_cifer);
 
         -- DEBUG --
-        insert into debug (name, log)
-        values (dbg_n, concat('After processing: '
+        call debug_prc(dbg_n, concat('After processing: '
                 'prev_cifer:', prev_cifer,
                 ' cifer:', cifer,
                 ' n: ', n,
